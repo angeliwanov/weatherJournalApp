@@ -19,8 +19,23 @@ app.use(express.static('website'));
 
 const port = 8000;
 // Setup Server
-const server = app.listen(port, listening);
-
-function listening() {
+const server = app.listen(port, function listening() {
     console.log(`server is running on local port ${port}`);
-}
+});
+
+
+// add Get route that returns projectData
+app.get('/projectData', function sendData(req, res) {
+    res.send(projectData);
+});
+
+//add POST requrest that adds temperature, date and user response to projectData
+app.post('/projectData', function(req, res) {
+    projectData = {
+        'temp': req.body.temperature,
+        'date': req.body.date,
+        'userRes': req.body.userResponse};
+});
+
+
+
