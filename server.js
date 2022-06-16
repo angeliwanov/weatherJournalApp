@@ -32,9 +32,9 @@ app.get('/projectData', function sendData(req, res) {
 //add POST requrest that adds temperature, date and user response to projectData
 app.post('/projectData', function(req, res) {
     projectData = {
-        'temperature': req.body.temperature,
+        'temp': req.body.temp,
         'date': req.body.date,
-        'userResponse': req.body.userResponse};
+        'feelings': req.body.feelings};
 });
 
 
